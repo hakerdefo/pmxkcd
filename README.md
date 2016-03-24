@@ -1,5 +1,5 @@
 # pmxkcd
-pmxkcd is a desktop XKCD viewer and downloader for Linux.
+pmxkcd is a desktop XKCD webcomic viewer and downloader for Linux.
 
 
 ### Features :
@@ -10,7 +10,7 @@ pmxkcd is a desktop XKCD viewer and downloader for Linux.
 
 ### Dependencies :
 
-  - YAD - [YAD] (yet another dialog) is a tool for create graphical dialogs from shell scripts. YAD is available in repositories of some Linux distributions. You can use following links to get YAD if it is not shipped by your distribution,
+  - YAD - YAD (yet another dialog) is a tool for create graphical dialogs from shell scripts. [YAD] is available in repositories of some Linux distributions. You can use following links to get YAD if it is not shipped by your distribution,
 
     http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad
 
@@ -44,7 +44,7 @@ su -c 'bash ./remove_pmxkcd'
 
 ### Usage :
 
-After installation you will find 'pmxkcd' entry in your applications menu. You can also run it via Terminal by typing pmxkcd and hitting Enter.
+After installation you will find 'pmxkcd' entry in your applications menu. You can also run it via Terminal by typing 'pmxkcd' and hitting Enter. After launching 'pmxkcd', to view current XKCD webcomic click on 'Current' button and to view a random XKCD webcomic click on 'Random' button. XKCD webcomics will be saved in user's '~/Pictures/xkcd' directory.
 
 
 ### Screenshot :
