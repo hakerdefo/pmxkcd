@@ -12,8 +12,9 @@ pmxkcd is a desktop XKCD viewer and downloader for Linux.
 
   - YAD - [YAD] (yet another dialog) is a tool for create graphical dialogs from shell scripts. YAD is available in repositories of some Linux distributions. You can use following links to get YAD if it is not shipped by your distribution,
 
-http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad
-http://pkgs.org/download/yad
+    http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad
+
+    http://pkgs.org/download/yad
 
 
 ### Installation :
@@ -47,7 +48,8 @@ After installation you will find 'pmxkcd' entry in your applications menu. You c
 
 
 ### Screenshot :
-Coming soon
+
+![alt text](https://github.com/hakerdefo/pmxkcd/blob/master/pmxkcd.png "pmxkcd")
 
 
 ### License :
@@ -57,5 +59,5 @@ Coming soon
 This work (<span property="dct:title">pmxkcd</span>, by [<span property="dct:title">hakerdefo</span>](https://github.com/hakerdefo/pmxkcd)), identified by [<span property="dct:title">hakerdefo</span>](https://hakerdefo.blogspot.com), is free of known copyright restrictions.
 
 
-[yad]:https://sourceforge.net/projects/yad-dialog/
+[YAD]:https://sourceforge.net/projects/yad-dialog/
 [pmxkcd-master]:https://github.com/hakerdefo/pmxkcd/archive/master.zip
