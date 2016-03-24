@@ -1,5 +1,5 @@
 # pmxkcd
-pmxkcd is a desktop XKCD webcomic viewer and downloader for Linux.
+pmxkcd (Poor Man's XKCD) is a desktop XKCD webcomic viewer and downloader for Linux.
 
 
 ### Features :
