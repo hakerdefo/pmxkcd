@@ -10,7 +10,7 @@ pmxkcd is a desktop XKCD webcomic viewer and downloader for Linux.
 
 ### Dependencies :
 
-  - YAD - YAD (yet another dialog) is a tool for create graphical dialogs from shell scripts. [YAD] is available in repositories of some Linux distributions. You can use following links to get YAD if it is not shipped by your distribution,
+  - YAD - YAD (yet another dialog) is a tool to create graphical dialogs from shell scripts. [YAD] is available in repositories of some Linux distributions. You can use following links to get YAD if it is not shipped by your distribution,
 
     http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad
 
