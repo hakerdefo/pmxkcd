@@ -75,7 +75,6 @@ After installation you will find 'pmxkcd' entry in your applications menu. You c
 
 ### License :
 
-
 [![Public Domain Mark](http://i.creativecommons.org/p/mark/1.0/88x31.png)](http://creativecommons.org/publicdomain/mark/1.0/)  
 This work (<span property="dct:title">pmxkcd</span>, by [<span property="dct:title">hakerdefo</span>](https://github.com/hakerdefo/pmxkcd)), identified by [<span property="dct:title">hakerdefo</span>](https://hakerdefo.blogspot.com), is free of known copyright restrictions.
 
