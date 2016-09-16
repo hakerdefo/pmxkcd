@@ -20,8 +20,11 @@ pmxkcd (Poor Man's XKCD) is a desktop XKCD webcomic viewer and downloader for Li
 ### Installation :
 
 Download [pmxkcd-master] zip,
+
 Extract its contents to a folder,
+
 Open that folder in Terminal,
+
 Give 'install-pmxkcd' the 'execute' permission,
 ```sh
 chmod 755 install-pmxkcd
@@ -40,8 +43,11 @@ su -c ./install-pmxkcd
 ### Removal :
 
 Get [pmxkcd-master] zip,
+
 Extract its contents to a folder,
+
 Open that folder in Terminal,
+
 Give 'remove-pmxkcd' the 'execute' permission,
 ```sh
 chmod 755 remove-pmxkcd
