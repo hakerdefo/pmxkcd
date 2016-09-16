@@ -39,7 +39,7 @@ echo -e ""
 tput sgr0
 exit 1
 fi
-type yad >/dev/null 2>&1 || { clear; echo ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo ""; echo -e '\e[38;5;82m' "Required program dependency \"yad\" is missing"; echo -e '\e[38;5;82m' "\"yad\" as a package available in some distros"; echo -e '\e[38;5;82m' "If it is not available in your distro's repo"; echo -e '\e[38;5;82m' "You can download yad from the following URLs"; echo ""; echo -e '\e[38;5;82m' "https://sourceforge.net/projects/yad-dialog/"; echo -e '\e[38;5;82m' "http://pkgs.org/download/yad"; echo -e '\e[38;5;82m' "http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad"; echo ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo ""; tput sgr0; exit 1; }
+type yad >/dev/null 2>&1 || { printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; echo -e '\e[38;5;82m' "Required program dependency \"yad\" is missing"; echo -e '\e[38;5;82m' "\"yad\" as a package available in some distros"; echo -e '\e[38;5;82m' "If it is not available in your distro's repo"; echo -e '\e[38;5;82m' "You can download yad from the following URLs"; echo -e ""; echo -e '\e[38;5;82m' "https://sourceforge.net/projects/yad-dialog/"; echo -e '\e[38;5;82m' "http://pkgs.org/download/yad"; echo -e '\e[38;5;82m' "http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
 work_dir=$(mktemp -d)
 pmrm=$(which rm)
 pmcp=$(which cp)
