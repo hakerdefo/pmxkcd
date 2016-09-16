@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+type pmxkcd >/dev/null 2>&1
+RETVAL=$?
+if [[ ! "$RETVAL" == 0 ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "\"pmxkcd\" is not installed!"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+if [ "$EUID" -ne 0 ]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "You must run \"remove-pmxkcd\" script using \"sudo\" or as the root user."
+echo -e '\e[38;5;82m' "HINT -> \"sudo bash ./remove-pmxkcd\" or \"su -c 'bash ./remove-pmxkcd'\""
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+pmxk1="/usr/local/bin/pmxkcd"
+pmxk2="/usr/local/bin/jq"
+pmxk3="/usr/share/applications/pmxkcd.desktop"
+pmxk4="/usr/share/pixmaps/pmxkcd_icon.png"
+pmxk5="/usr/share/pixmaps/pmxkcd_logo.png"
+pmrm=$(which rm)
+if [ -f "$pmxk1" ]; then
+"$pmrm" -f "$pmxk1"
+fi
+if [ -f "$pmxk2" ]; then
+"$pmrm" -f "$pmxk2"
+fi
+if [ -f "$pmxk3" ]; then
+"$pmrm" -f "$pmxk3"
+fi
+if [ -f "$pmxk4" ]; then
+"$pmrm" -f "$pmxk4"
+fi
+if [ -f "$pmxk5" ]; then
+"$pmrm" -f "$pmxk5"
+fi
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "\"pmxkcd\" successfully removed!"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 0
