@@ -19,7 +19,7 @@ echo -e ""
 { for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
 echo -e ""
 echo -e '\e[38;5;82m' "You must run \"install-pmxkcd\" script using \"sudo\" or as the root user."
-echo -e '\e[38;5;82m' "Hint-> \"sudo bash ./install-pmxkcd\" or \"su -c 'bash ./install-pmxkcd'\""
+echo -e '\e[38;5;82m' "Hint Hint Hint -> \"sudo ./install-pmxkcd\" or \"su -c ./install-pmxkcd\"."
 echo -e ""
 { for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
 echo -e ""
