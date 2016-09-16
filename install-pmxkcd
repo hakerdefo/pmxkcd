@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+type pmxkcd >/dev/null 2>&1
+RETVAL=$?
+if [[ "$RETVAL" == 0 ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "\"pmxkcd\" is already installed!"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+if [ "$EUID" -ne 0 ]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "You must run \"install-pmxkcd\" script using \"sudo\" or as the root user."
+echo -e '\e[38;5;82m' "Hint-> \"sudo bash ./install-pmxkcd\" or \"su -c 'bash ./install-pmxkcd'\""
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+if [ ! -f pmxkcd.tar.gz ]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "The required archive \"pmxkcd.tar.gz\" is missing or unavailable!"
+echo -e '\e[38;5;82m' "Can't continue with the installation process! Aborting install!"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+type yad >/dev/null 2>&1 || { clear; echo ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo ""; echo -e '\e[38;5;82m' "Required program dependency \"yad\" is missing"; echo -e '\e[38;5;82m' "\"yad\" as a package available in some distros"; echo -e '\e[38;5;82m' "If it is not available in your distro's repo"; echo -e '\e[38;5;82m' "You can download yad from the following URLs"; echo ""; echo -e '\e[38;5;82m' "https://sourceforge.net/projects/yad-dialog/"; echo -e '\e[38;5;82m' "http://pkgs.org/download/yad"; echo -e '\e[38;5;82m' "http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad"; echo ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo ""; tput sgr0; exit 1; }
+work_dir=$(mktemp -d)
+pmrm=$(which rm)
+pmcp=$(which cp)
+tar -xzf pmxkcd.tar.gz --directory "$work_dir"
+cd "$work_dir" || { "$pmrm" -rf "$work_dir"; printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; echo -e '\e[38;5;82m'"Something went wrong!!! Aborted!!!"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
+type jq >/dev/null 2>&1
+RETVAL=$?
+if [[ ! "$RETVAL" == 0 ]]; then
+work_bit=$(getconf LONG_BIT)
+if [[ "$work_bit" == 32 ]]; then
+"$pmcp" jq-linux32 /usr/local/bin/jq
+chmod +x /usr/local/bin/jq
+else
+"$pmcp" jq-linux64 /usr/local/bin/jq
+chmod +x /usr/local/bin/jq
+fi
+fi
+"$pmcp" pmxkcd /usr/local/bin
+chmod a+rx /usr/local/bin/pmxkcd
+"$pmcp" pmxkcd.desktop /usr/share/applications
+chmod 644 /usr/share/applications/pmxkcd.desktop
+"$pmcp" {pmxkcd_icon.png,pmxkcd_logo.png} /usr/share/pixmaps
+chmod 644 /usr/share/pixmaps/pmxkcd_icon.png
+chmod 644 /usr/share/pixmaps/pmxkcd_logo.png
+cd "$HOME" || { "$pmrm" -rf "$work_dir"; "$pmrm" -f /usr/local/bin/jq; "$pmrm" -f /usr/local/bin/pmxkcd; "$pmrm" -f /usr/share/applications/pmxkcd.desktop; "$pmrm" -f /usr/share/pixmaps/pmxkcd_icon.png; "$pmrm" -f /usr/share/pixmaps/pmxkcd_logo.png; printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e '\e[38;5;82m'"Something  went wrong!!! Aborted!!!"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
+"$pmrm" -rf "$work_dir"
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m' "Installation of \"pmxkcd\" is successfull!!!"
+echo -e '\e[38;5;82m' "You can run \"pmxkcd\" from the main menu or"
+echo -e '\e[38;5;82m' "by running \"pmxkcd\" command from terminal."
+echo ""
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 0
